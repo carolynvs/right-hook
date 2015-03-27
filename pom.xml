@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.carolynvs</groupId>
+    <artifactId>right-hook</artifactId>
+    <version>1.0</version>
+    <organization>
+        <name>Carolyn Van Slyck</name>
+        <url>http://carolynvanslyck.com</url>
+    </organization>
+    <name>Right Hook!</name>
+    <description>Chuck Norris has the only hook you'll ever need</description>
+    <packaging>atlassian-plugin</packaging>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.atlassian.stash</groupId>
+                <artifactId>stash-parent</artifactId>
+                <version>${stash.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.atlassian.stash</groupId>
+            <artifactId>stash-spi</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.atlassian.bundles</groupId>
+            <artifactId>json</artifactId>
+            <version>20070829</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-stash-plugin</artifactId>
+                <version>${amps.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <products>
+                        <product>
+                            <id>stash</id>
+                            <instanceId>stash</instanceId>
+                            <version>${stash.version}</version>
+                            <dataVersion>${stash.data.version}</dataVersion>
+                        </product>
+                    </products>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <stash.version>3.7.1</stash.version>
+        <stash.data.version>3.7.1</stash.data.version>
+        <amps.version>5.0.13</amps.version>
+        <plugin.testrunner.version>1.2.3</plugin.testrunner.version>
+    </properties>
+</project>
