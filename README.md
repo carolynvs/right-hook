@@ -1,7 +1,11 @@
+<blockquote>
+This is no longer actively maintained but I am happy to accept a pull request
+and publish it to the Atlassian Marketplace.
+</blockquote>
+
 <img src="src/main/resources/images/hookIcon.png" alt="Lightning Fist of Fury" align="right" />
 
-Right Hook!
-========================
+# Right Hook!
 
 *Chuck Norris has the only hook you'll ever need*
 
